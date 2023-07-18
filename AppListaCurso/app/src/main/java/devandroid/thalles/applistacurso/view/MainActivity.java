@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText editSobrenome;
     EditText editCursoDesejado;
     EditText editNumeroContato;
-
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
@@ -30,10 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pessoa = new Pessoa();
-//        pessoa.setNome( "Thalles" );
-//        pessoa.setSobrenome( "Cerqueira" );
-//        pessoa.setCursoDesejado( "Android Development" );
-//        pessoa.setTelefoneContato( "7388776655" );
 
         editPrimeiroNome = findViewById( R.id.editPrimeiroNome );
         editSobrenome = findViewById( R.id.editSobrenome );
@@ -43,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById( R.id.btnLimpar );
         btnSalvar = findViewById( R.id.btnSalvar );
         btnFinalizar = findViewById( R.id.btnFinalizar );
-
-//        editPrimeiroNome.setText( pessoa.getNome() );
-//        editSobrenome.setText( pessoa.getSobrenome() );
-//        editCursoDesejado.setText( pessoa.getCursoDesejado() );
-//        editNumeroContato.setText( pessoa.getTelefoneContato() );
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
