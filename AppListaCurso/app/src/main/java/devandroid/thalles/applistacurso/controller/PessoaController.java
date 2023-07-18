@@ -1,4 +1,4 @@
 package devandroid.thalles.applistacurso.controller;
 
-public class CursoController {
+public class PessoaController {
 }
