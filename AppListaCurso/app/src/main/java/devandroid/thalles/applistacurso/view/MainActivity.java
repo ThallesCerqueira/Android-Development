@@ -33,16 +33,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Variáveis
         pessoa = new Pessoa();
         pessoaController = new PessoaController();
         preferences = getSharedPreferences( NOME_PREFERENCES, 0 );
         SharedPreferences.Editor listaVip = preferences.edit();
 
+        // Settando valores às variaveis a partir do doc
+        pessoa.setNome( preferences.getString( "primeiroNome", "" ) );
+        pessoa.setSobrenome( preferences.getString( "sobrenome", "" ) );
+        pessoa.setCursoDesejado( preferences.getString( "cursoDesejado", "" ) );
+        pessoa.setTelefoneContato( preferences.getString( "telefoneContato", "" ) );
+
+        // Mapeando os campos
         editPrimeiroNome = findViewById( R.id.editPrimeiroNome );
         editSobrenome = findViewById( R.id.editSobrenome );
         editCursoDesejado = findViewById( R.id.editCursoDesejado );
         editNumeroContato = findViewById( R.id.editNumeroContato );
 
+        // Settando valores aos campos
+        editPrimeiroNome.setText( pessoa.getNome() );
+        editSobrenome.setText( pessoa.getSobrenome() );
+        editCursoDesejado.setText( pessoa.getCursoDesejado() );
+        editNumeroContato.setText( pessoa.getTelefoneContato() );
+
+        // Mapeando os botões
         btnLimpar = findViewById( R.id.btnLimpar );
         btnSalvar = findViewById( R.id.btnSalvar );
         btnFinalizar = findViewById( R.id.btnFinalizar );
