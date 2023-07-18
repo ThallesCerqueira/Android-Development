@@ -1,6 +1,7 @@
 package devandroid.thalles.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText( MainActivity.this, "Volte sempre", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte sempre", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -63,17 +64,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                pessoa.setNome( editPrimeiroNome.getText().toString() );
-                pessoa.setSobrenome( editSobrenome.getText().toString() );
-                pessoa.setCursoDesejado( editCursoDesejado.getText().toString() );
-                pessoa.setTelefoneContato( editNumeroContato.getText().toString() );
+                pessoa.setNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobrenome(editSobrenome.getText().toString());
+                pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
+                pessoa.setTelefoneContato(editNumeroContato.getText().toString());
 
-                Toast.makeText( MainActivity.this, "Salvo: " + pessoa.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Salvo: " + pessoa.toString(), Toast.LENGTH_LONG).show();
 
                 pessoaController.salvar( pessoa );
 
             }
+
         });
 
     }
+
 }
