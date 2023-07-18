@@ -7,13 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import devandroid.thalles.applistacurso.R;
+import devandroid.thalles.applistacurso.controller.PessoaController;
 import devandroid.thalles.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    PessoaController pessoaController;
+
     EditText editPrimeiroNome;
     EditText editSobrenome;
     EditText editCursoDesejado;
@@ -29,14 +31,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pessoa = new Pessoa();
+        pessoaController = new PessoaController();
 
-        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
-        editSobrenome = findViewById(R.id.editSobrenome);
-        editCursoDesejado = findViewById(R.id.editCursoDesejado);
-        editNumeroContato = findViewById(R.id.editNumeroContato);
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnFinalizar = findViewById(R.id.btnFinalizar);
+        editPrimeiroNome = findViewById( R.id.editPrimeiroNome );
+        editSobrenome = findViewById( R.id.editSobrenome );
+        editCursoDesejado = findViewById( R.id.editCursoDesejado );
+        editNumeroContato = findViewById( R.id.editNumeroContato );
+
+        btnLimpar = findViewById( R.id.btnLimpar );
+        btnSalvar = findViewById( R.id.btnSalvar );
+        btnFinalizar = findViewById( R.id.btnFinalizar );
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editNumeroContato.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo: " + pessoa.toString(), Toast.LENGTH_LONG).show();
+
+                pessoaController.salvar( pessoa );
 
             }
 
