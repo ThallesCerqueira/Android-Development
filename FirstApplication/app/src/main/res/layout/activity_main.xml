@@ -16,26 +16,27 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Item"
+        android:layout_height="48dp"
+        android:hint="@string/hint_Item"
         android:inputType="text" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Data"
-        android:inputType="date" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Valor"
+        android:layout_height="48dp"
+        android:hint="@string/hint_Valor"
         android:inputType="number" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Observação"
+        android:layout_height="48dp"
+        android:hint="@string/hint_Data"
+        android:inputType="date" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/hint_Observacao"
         android:inputType="textMultiLine" />
 
     <LinearLayout
@@ -44,25 +45,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="1dp"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:padding="16dp"
             android:text="@string/btnLimpar" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:padding="16dp"
             android:text="@string/btnSalvar" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnFinalizar" />
-
-
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btnFinalizar" />
 
 
 </LinearLayout>

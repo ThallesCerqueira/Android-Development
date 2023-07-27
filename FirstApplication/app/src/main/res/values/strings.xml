@@ -4,4 +4,8 @@
     <string name="btnLimpar">Limpar</string>
     <string name="btnSalvar">Salvar</string>
     <string name="btnFinalizar">Finalizar</string>
+    <string name="hint_Item">Item</string>
+    <string name="hint_Data">Data</string>
+    <string name="hint_Valor">Valor</string>
+    <string name="hint_Observacao">Observação</string>
 </resources>
