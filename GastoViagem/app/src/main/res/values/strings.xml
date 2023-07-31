@@ -2,11 +2,11 @@
     <string name="app_name">GastoViagem</string>
     <string name="hint_Distancia">Distância</string>
     <string name="text_TotalKM">Total de quilômetros</string>
-    <string name="edit_Preco">Preço</string>
-    <string name="text_precoLitro">Preço por litro</string>
-    <string name="editAutonomia">Autonomia</string>
-    <string name="textKmLitro">Kms por Litro</string>
-    <string name="textGastoTotal">SEU GASTO TOTAL SERÁ DE:</string>
-    <string name="btnCalcular">CALCULAR</string>
-    <string name="text_cifrao">R$</string>
+    <string name="edit_price">Preço</string>
+    <string name="text_price_per_liter">Preço por litro</string>
+    <string name="edit_autonomy">Autonomia</string>
+    <string name="text_Km_per_liter">Kms por Litro</string>
+    <string name="text_total_cost">SEU GASTO TOTAL SERÁ DE:</string>
+    <string name="button_calculate">CALCULAR</string>
+    <string name="text_total_value">R$</string>
 </resources>
