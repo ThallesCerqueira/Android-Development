@@ -29,14 +29,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun calculate() {
 
-        val distance = binding.editDistance.text.toString().toFloat()
-        val price = binding.editPrice.text.toString().toFloat()
-        val autonomy = binding.editAutonomy.text.toString().toFloat()
+        var distance = 0f
+        var price = 0f
+        var autonomy = 0f
+        var totalValue = 0f
 
-        val totalValue = (distance * price) / autonomy
-        binding.textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
+        if( isValid() ) {
 
-        //Toast.makeText( this, totalValueStr, Toast.LENGTH_SHORT ).show()
+            distance = binding.editDistance.text.toString().toFloat()
+            price = binding.editPrice.text.toString().toFloat()
+            autonomy = binding.editAutonomy.text.toString().toFloat()
+            totalValue = (distance * price) / autonomy
+
+            binding.textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
+
+        } else {
+            Toast.makeText( this, R.string.validation_fill_all_fields, Toast.LENGTH_SHORT ).show()
+        }
+
+    }
+
+    private fun isValid(): Boolean {
+
+        return binding.editDistance.text.toString() != "" &&
+                binding.editPrice.text.toString() != "" &&
+                binding.editAutonomy.text.toString() != "" &&
+                binding.editAutonomy.text.toString().toFloat() != 0f
+                binding.editDistance.text.toString().toFloat() != 0f
+                binding.editPrice.text.toString().toFloat() != 0f
 
     }
 }
