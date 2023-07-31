@@ -26,7 +26,7 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/text_price"
+        android:id="@+id/edit_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -43,7 +43,7 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/autonomy"
+        android:id="@+id/edit_autonomy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
