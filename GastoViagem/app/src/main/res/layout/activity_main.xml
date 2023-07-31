@@ -10,71 +10,77 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:text="Distância"
-        android:textColor="@color/gray" />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Total de quilômetros"
-        android:textSize="14sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:inputType="number"
-        android:text="Preço"
-        android:textColor="@color/gray" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Preço por litro"
-        android:textSize="14sp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:text="Autonomia"
-        android:textColor="@color/gray" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Kms por Litro"
-        android:textSize="14sp" />
-
-    <TextView
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:textSize="16sp"
         android:layout_marginTop="32dp"
-        android:text="SEU GASTO TOTAL SERÁ DE:"
-        android:layout_height="wrap_content" />
-    
+        android:hint="@string/hint_Distancia"
+        android:textColor="@color/gray" />
+
     <TextView
-        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_TotalKM"
+        android:layout_marginTop="2dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/edit_Preco"
+        android:inputType="number"
+        android:textColor="@color/gray" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:text="@string/text_precoLitro"
+        android:textSize="14sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/editAutonomia"
+        android:textColor="@color/gray" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:text="@string/textKmLitro"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/textGastoTotal"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:text="R$ 0"
-        android:layout_height="wrap_content" />
-    
+        android:gravity="center"
+        android:text="@string/text_cifrao"
+        android:textColor="@color/green"
+        android:textSize="38sp" />
+
     <Button
         android:layout_width="match_parent"
-        android:layout_margin="16dp"
-        android:text="CALCULAR"
-        android:textSize="16sp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_height="wrap_content" />
-        
+        android:layout_margin="16dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/green"
+        android:padding="16dp"
+        android:text="@string/btnCalcular"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
