@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">appMotivation</string>
+    <string name="text_hello">Olá, Kotlin!</string>
+    <string name="txt_phrase">Motivation</string>
+    <string name="txt_above_phrase">________________</string>
+    <string name="button_new_phrase">NOVA FRASE</string>
+</resources>
