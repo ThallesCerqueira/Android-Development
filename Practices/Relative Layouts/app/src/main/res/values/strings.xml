@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Relative Layout</string>
+    <string name="hint_email">Email</string>
+    <string name="edit_password">Senha</string>
+    <string name="button_login">LOGIN</string>
+    <string name="text_nao_cadastrado">Ainda não é cadastrado? Cadastre-se!</string>
+    <string name="text_esqueceu_senha">Esqueceu sua senha?</string>
+</resources>
