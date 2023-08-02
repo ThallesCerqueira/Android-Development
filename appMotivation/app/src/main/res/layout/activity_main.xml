@@ -25,21 +25,23 @@
             android:layout_height="38dp"
             android:layout_weight="1"
             android:src="@drawable/ic_infinit"
-            app:tint="@color/white" />
+            app:tint="@color/black" />
 
         <ImageView
             android:id="@+id/ic_sentiment"
             android:layout_width="0dp"
             android:layout_height="38dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_sentiment" />
+            android:src="@drawable/ic_sentiment"
+            app:tint="@color/black" />
 
         <ImageView
             android:id="@+id/ic_sun"
             android:layout_width="0dp"
             android:layout_height="38dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_sun" />
+            android:src="@drawable/ic_sun"
+            app:tint="@color/black" />
 
     </LinearLayout>
 
