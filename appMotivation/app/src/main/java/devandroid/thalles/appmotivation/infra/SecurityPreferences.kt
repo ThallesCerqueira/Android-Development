@@ -1,4 +1,4 @@
-package devandroid.thalles.appmotivation
+package devandroid.thalles.appmotivation.infra
 
 import android.content.Context
 import android.content.SharedPreferences

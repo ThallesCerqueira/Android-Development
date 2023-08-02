@@ -1,9 +1,11 @@
-package devandroid.thalles.appmotivation
+package devandroid.thalles.appmotivation.ui
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import devandroid.thalles.appmotivation.infra.MotivationConstants
+import devandroid.thalles.appmotivation.R
+import devandroid.thalles.appmotivation.infra.SecurityPreferences
 import devandroid.thalles.appmotivation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -26,7 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleUserName() {
-        val name = SecurityPreferences(this).getString( MotivationConstants.KEY.USER_NAME )
+        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
         binding.textHello.text = "Olá, $name!"
     }
 

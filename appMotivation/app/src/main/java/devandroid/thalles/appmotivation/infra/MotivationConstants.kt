@@ -1,4 +1,4 @@
-package devandroid.thalles.appmotivation
+package devandroid.thalles.appmotivation.infra
 
 class MotivationConstants private constructor(){
 
