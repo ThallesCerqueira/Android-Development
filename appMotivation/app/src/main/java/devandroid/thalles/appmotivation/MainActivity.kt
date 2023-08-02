@@ -1,5 +1,6 @@
 package devandroid.thalles.appmotivation
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,9 +18,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Esconde a barra de navegação
         supportActionBar?.hide()
 
+        handleUserName()
+
         // Eventos de navegação
         binding.buttonNewPhrase.setOnClickListener(this)
 
+    }
+
+    private fun handleUserName() {
+        val name = SecurityPreferences(this).getString( MotivationConstants.KEY.USER_NAME )
+        binding.textHello.text = "Olá, $name!"
     }
 
     override fun onClick(view: View) {

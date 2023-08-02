@@ -34,7 +34,7 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
         val name = binding.editYourName.text.toString()
 
         if (name != "") {
-            SecurityPreferences(this).storeString("USER_NAME", name)
+            SecurityPreferences(this).storeString( MotivationConstants.KEY.USER_NAME, name)
             startActivity( Intent(this, MainActivity::class.java) )
             finish()
         } else {
