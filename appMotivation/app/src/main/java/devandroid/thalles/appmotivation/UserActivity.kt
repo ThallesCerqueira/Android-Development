@@ -1,5 +1,6 @@
 package devandroid.thalles.appmotivation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,7 +23,7 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
 
-        if(view.id == R.id.button_save) {
+        if (view.id == R.id.button_save) {
             handleSave()
         }
 
@@ -32,10 +33,12 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
 
         val name = binding.editYourName.text.toString()
 
-        if(name != "") {
-
-        } else{
-          Toast.makeText(this, "" )
+        if (name != "") {
+            SecurityPreferences(this).storeString("USER_NAME", name)
+            startActivity( Intent(this, MainActivity::class.java) )
+            finish()
+        } else {
+            Toast.makeText(this, R.string.validation_mandatory_name, Toast.LENGTH_SHORT).show()
         }
 
     }
