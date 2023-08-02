@@ -22,6 +22,19 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.hide()
 
         binding.buttonSave.setOnClickListener(this)
+
+        verifyUserName()
+    }
+
+    private fun verifyUserName() {
+
+        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
+
+        if(name != "") {
+            startActivity( Intent(this, MainActivity::class.java) )
+            finish()
+        }
+
     }
 
     override fun onClick(view: View) {
