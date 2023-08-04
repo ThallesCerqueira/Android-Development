@@ -7,13 +7,15 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import devandroid.thalles.appmotivation.infra.MotivationConstants
 import devandroid.thalles.appmotivation.R
+import devandroid.thalles.appmotivation.data.Mock
 import devandroid.thalles.appmotivation.infra.SecurityPreferences
 import devandroid.thalles.appmotivation.databinding.ActivityMainBinding
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
-    private var categoryId = 1
+    private var categoryId = MotivationConstants.FILTER.INFINIT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         handleUserName()
         handleFilter(R.id.ic_infinit)
+        handleNextPhrase()
 
         // Eventos de navegação
         binding.buttonNewPhrase.setOnClickListener(this)
@@ -42,11 +45,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
 
         if(view.id == R.id.button_new_phrase) {
-            var s = ""
+
+            handleNextPhrase()
+
         } else if( view.id in listOf( R.id.ic_infinit, R.id.ic_sun, R.id.ic_sentiment ) ) {
             handleFilter(view.id)
         }
 
+    }
+
+    private fun handleNextPhrase() {
+        val phrase = Mock().getPhrase(categoryId)
+        binding.textPhrase.text = phrase
     }
 
     private fun handleFilter(id: Int) {
