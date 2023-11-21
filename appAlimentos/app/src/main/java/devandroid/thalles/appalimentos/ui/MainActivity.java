@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         this.mViewHolder.mRecyclerFood = findViewById(R.id.recycler_food);
 
         // 2 - Definir um adapter
-        FoodAdapter adapter = new FoodAdapter();
+        FoodAdapter adapter = new FoodAdapter(list);
         this.mViewHolder.mRecyclerFood.setAdapter(adapter);
 
         // 3 - Definir um Layout
