@@ -1,5 +1,6 @@
 package devandroid.thalles.appalimentos.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import java.util.List;
 
@@ -20,19 +22,17 @@ import devandroid.thalles.appalimentos.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FoodBusiness mFoodBusiness = new FoodBusiness();
     private ViewHolder mViewHolder = new ViewHolder();
+    private OnListClick mListener;
+    private int mFilter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<FoodEntity> list = new FoodBusiness().getList();
-
-        // 1 - Obter a RecyclerView
-        this.mViewHolder.mRecyclerFood = findViewById(R.id.recycler_food);
-
-        OnListClick foodListener = new OnListClick() {
+        this.mListener = new OnListClick() {
             @Override
             public void onClick(int id) {
 
@@ -46,12 +46,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        // 2 - Definir um adapter
-        FoodAdapter adapter = new FoodAdapter(list, foodListener);
-        this.mViewHolder.mRecyclerFood.setAdapter(adapter);
+        this.mViewHolder.mRecyclerFood = findViewById(R.id.recycler_food);
+        this.mViewHolder.mRecyclerFood.setLayoutManager(new LinearLayoutManager(this));
 
-        // 3 - Definir um Layout
-        this.mViewHolder.mRecyclerFood.setLayoutManager( new LinearLayoutManager(this));
+        this.listFood();
 
     }
 
@@ -62,6 +60,31 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.actionmenu, menu);
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        item.setChecked(true);
+
+        if (item.getItemId() == R.id.filter_low) {
+
+            this.mFilter = FoodConstants.FILTER.CAL_LOW;
+
+        } else if (item.getItemId() == R.id.filter_medium) {
+            this.mFilter = FoodConstants.FILTER.CAL_MEDIUM;
+        } else {
+            this.mFilter = FoodConstants.FILTER.CAL_HIGH;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    private void listFood() {
+        List<FoodEntity> list = mFoodBusiness.getList(this.mFilter);
+
+        FoodAdapter adapter = new FoodAdapter(list, this.mListener);
+        this.mViewHolder.mRecyclerFood.setAdapter(adapter);
     }
 
     private static class ViewHolder {
